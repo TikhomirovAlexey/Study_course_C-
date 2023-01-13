@@ -7,5 +7,9 @@
 // -3 -> 9
 // -7 -> 49
 
+Console.Write("введите целое число: ");
+int num = Convert.ToInt32(Console.ReadLine());
 
+int res = num * num;
 
+Console.WriteLine(res);
