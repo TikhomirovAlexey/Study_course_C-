@@ -10,6 +10,12 @@ bool GetWeekend(int num)
 Console.Write("Введите порядковый номер дня недели: ");
 int number = Convert.ToInt32(Console.ReadLine());
 
+while (number < 1 || number > 7)
+{
+    Console.Write("Вы ввели неправильный порядковый номер! Введите число от 1 до 7, включаяя последнее: ");
+    number = Convert.ToInt32(Console.ReadLine());
+}
+
 bool res = GetWeekend(number);
 Console.WriteLine(res ? "выходной" : "не выходной");
 
