@@ -6,7 +6,7 @@
 // 918 -> 98
 // 12 мин
 
-int rendomNumber = new Random().Next(100, 1000);
+int rendomNumber = new Random().Next(100, 1000); // 100 < 1000
 Console.WriteLine($"Конечное число => {rendomNumber}");
 
 int finishNumber = GetNumber(rendomNumber);
