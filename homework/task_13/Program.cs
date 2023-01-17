@@ -15,7 +15,7 @@ int GetThirdNumber(int num)
 Console.Write("Введите целое число: ");
 int number = Convert.ToInt32(Console.ReadLine());
 
-if (number < 0) number = -number;
+// if (number < 0) number = -number;
 
-int result = GetThirdNumber(number);
-Console.WriteLine(result == -1 ? "Третьей цифры нет." : $"Третия цифра -> {result}");
+int result = number < 0 ? GetThirdNumber(-number) : GetThirdNumber(number);
+Console.WriteLine(result == -1 ? $"В числе {number} третьей цифры нет." : $"Третья цифра в числе {number} -> {result}");
