@@ -4,7 +4,7 @@
 // 5 -> Пятница
 
 Console.Write("Введите поряддковый номер дня недели: ");
-string numberDay = Console.ReadLine();
+string? numberDay = Console.ReadLine();
 
 switch (numberDay)
 {
