@@ -7,17 +7,14 @@ int userNum = Convert.ToInt32(Console.ReadLine());
 
 while (userNum <= 0)
 {
-    Console.Write("Вы ввели неверное число! Введите натуральное число: ");
+    Console.Write("Вы ввели неверное число! Введите положительное число: ");
     userNum = Convert.ToInt32(Console.ReadLine());
 }
 
-int count = 1;
+int count = 2;
 
 while (count <= userNum)
 {
-    if (count % 2 == 0)
-    {
-        Console.Write($"{count} ");
-    }
-    count++;
+    Console.Write($"{count} ");
+    count += 2;
 }
