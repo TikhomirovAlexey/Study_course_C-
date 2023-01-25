@@ -14,7 +14,7 @@ int GetSumNumbers(int num)
     return sum;
 }
 
-Console.Write("Введите первое число: ");
+Console.Write("Введите число: ");
 int userNumber = Convert.ToInt32(Console.ReadLine());
 
 if (userNumber > -10 && userNumber < 10)

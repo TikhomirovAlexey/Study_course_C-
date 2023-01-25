@@ -16,12 +16,12 @@ Console.Write("Введите первое число: ");
 double userNumber = Convert.ToDouble(Console.ReadLine());
 
 Console.Write("Введите положительное целое число - степень: ");
-string userDegree = Console.ReadLine();
+string? userDegree = Console.ReadLine();
 
 int numberDegree;
 bool res = int.TryParse(userDegree, out numberDegree);
 
-while (numberDegree <= 0 || !res) /*так как int.TryParse в случае false записывает 0 в указанную переменную, то в условии цикла исключаем отрицательные значения и 0. (res == false или !res можно не вписывать или "дурной тон"?)*/
+while (numberDegree <= 0 || !res)
 {
     Console.Write("Степень должна быть натуральным числом. Введите положительное целое число: ");
     userDegree = Console.ReadLine();
