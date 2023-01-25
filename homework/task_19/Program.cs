@@ -26,8 +26,16 @@ while (userNumber < 0)
     userNumber = Convert.ToInt32(Console.ReadLine());
 }
 
-int result = GetNumber(userNumber);
-Console.WriteLine(result == userNumber ? $"Число {userNumber} является палиндромом." : $"Число {userNumber} не является палиндромом.");
+if (userNumber >= 0 && userNumber < 10)
+{
+    Console.Write("Вы ввели одну цифру, это не палиндром!");
+}
+else
+{
+    int result = GetNumber(userNumber);
+    Console.WriteLine(result == userNumber ? $"Число {userNumber} является палиндромом." : $"Число {userNumber} не является палиндромом.");
+}
+
 
 
 // Вариант с пятизначным числом
