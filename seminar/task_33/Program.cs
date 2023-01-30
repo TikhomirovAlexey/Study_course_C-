@@ -14,11 +14,12 @@ void GenerateArray(int[] arr, int min, int max)
 
 string PrintArray(int[] arr)
 {
-    string str = String.Empty;
+    string str = "[";
     for (int i = 0; i < arr.Length; i++)
     {
         str += $" {arr[i]}";
     }
+    str += " ]";
     return str;
 
 }
@@ -39,4 +40,4 @@ Console.Write("Введите число от -10 до 10: ");
 int userNumber = Convert.ToInt32(Console.ReadLine());
 
 bool resul = FindMatch(arrayNumbers, userNumber);
-Console.WriteLine(resul ? $"Число {userNumber} присутствует в массиве {PrintArray(arrayNumbers)}." : $"Число {userNumber} отсутствует в массиве [{PrintArray(arrayNumbers)}].");
+Console.WriteLine(resul ? $"Число {userNumber} присутствует в массиве {PrintArray(arrayNumbers)}." : $"Число {userNumber} отсутствует в массиве {PrintArray(arrayNumbers)}.");
