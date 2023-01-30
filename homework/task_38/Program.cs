@@ -2,13 +2,13 @@
 // [3.5, 7.1, 22.9, 2.3, 78.5] -> 76.2
 
 
-double[] GenerateDoubleArray(int length, int max)
+double[] GenerateDoubleArray(int length, int min, int max)
 {
     double[] array = new double[length];
     Random rnd = new Random();
     for (int i = 0; i < length; i++)
     {
-        array[i] = Math.Round(rnd.NextDouble() * max, 1);
+        array[i] = Math.Round(rnd.NextDouble() * (max - min) + min, 1);
     }
     return array;
 }
@@ -51,10 +51,8 @@ double GetDifferenceNumbers(double max, double min)
     return Math.Round(max - min, 1);
 }
 
-double[] arrayNumbers = GenerateDoubleArray(10, 20);
+double[] arrayNumbers = GenerateDoubleArray(10, 0, 20);
 double maxNumber = GetMaxNumber(arrayNumbers);
-Console.WriteLine($"Max {maxNumber}.");
 double minNumber = GetMinNumber(arrayNumbers);
-Console.WriteLine($"Min {minNumber}.");
 double differenceNumbers = GetDifferenceNumbers(maxNumber, minNumber);
 Console.WriteLine($"В массиве {PrintArray(arrayNumbers)} разница большего и меньшего числа равна {differenceNumbers}.");
