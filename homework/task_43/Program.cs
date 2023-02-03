@@ -5,7 +5,6 @@
 double GetCoordinatesX(double b1, double k1, double b2, double k2)
 {
     double x = (b2 - b1) / (k1 - k2);
-    Console.WriteLine(x);
     return Math.Round(x, 1);
 }
 
@@ -26,7 +25,12 @@ double userB2 = Convert.ToDouble(Console.ReadLine());
 Console.Write("Введите k2: ");
 double userK2 = Convert.ToDouble(Console.ReadLine());
 
-double coordinatesX = GetCoordinatesX(userB1, userK1, userB2, userK2);
-double coordinatesY = GetCoordinatesY(userB1, userK1, userB2, userK2, coordinatesX);
+if (userB1 == userB2 && userK1 == userK2) Console.WriteLine($"Прямые совпадают!");
+else if (userK1 == userK2) Console.WriteLine($"Прямые паралельны!");
+else
+{
+    double coordinatesX = GetCoordinatesX(userB1, userK1, userB2, userK2);
+    double coordinatesY = GetCoordinatesY(userB1, userK1, userB2, userK2, coordinatesX);
 
-Console.WriteLine($"Координаты точки пересечения ({coordinatesX}, {coordinatesY})");
+    Console.WriteLine($"Координаты точки пересечения ({coordinatesX}, {coordinatesY})");
+}
