@@ -47,7 +47,7 @@ int[,] GetMultiMatrix(int[,] matrix1, int[,] matrix2)
         {
             // c ij​=a i1​b 1j​+a i2​b 2j​+...+a in​b nj​. 
             matrixMulti[i, j] = 0;
-            for (int k = 0; k < matrix1.GetLength(0); k++)
+            for (int k = 0; k < matrix1.GetLength(1); k++)
             {
                 matrixMulti[i, j] += matrix1[i, k] * matrix2[k, j];
             }
@@ -56,17 +56,18 @@ int[,] GetMultiMatrix(int[,] matrix1, int[,] matrix2)
     return matrixMulti;
 }
 
-int[,] matrixNumbersOne = GenerateMatrix(2, 2, 0, 10);
+int[,] matrixNumbersOne = GenerateMatrix(4, 4, 0, 10);
 Console.WriteLine($"Матрица 1 - \n{PrintMatrix(matrixNumbersOne)}");
 
-int[,] matrixNumbersTwo = GenerateMatrix(2, 2, 0, 10);
+int[,] matrixNumbersTwo = GenerateMatrix(4, 4, 0, 10);
 Console.WriteLine($"Матрица 2 - \n{PrintMatrix(matrixNumbersTwo)}");
 
-if (matrixNumbersOne.GetLength(1) != matrixNumbersTwo.GetLength(0))
+if (matrixNumbersOne.GetLength(1) == matrixNumbersTwo.GetLength(0))
 {
-    Console.WriteLine("Нельзя найт произведение матриц");
-    return;
+    int[,] multiMatrix = GetMultiMatrix(matrixNumbersOne, matrixNumbersTwo);
+    Console.WriteLine($"Приизведение матриц - \n{PrintMatrix(multiMatrix)}");
 }
-
-int[,] multiMatrix = GetMultiMatrix(matrixNumbersOne, matrixNumbersTwo);
-Console.WriteLine($"Приизведение матриц - \n{PrintMatrix(multiMatrix)}");
+else
+{
+    Console.WriteLine("Нельзя найти произведение матриц");
+}
