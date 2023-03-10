@@ -26,7 +26,7 @@ int GetCountPositiveNumbers(int[] array)
 }
 
 Console.Write("Введите целые числа через пробел: ");
-int[] userSizeArray = Array.ConvertAll(Console.ReadLine().Split(' '), s => int.Parse(s));
+int[] userSizeArray = Array.ConvertAll(Console.ReadLine()!.Split(' '), s => int.Parse(s));
 
 int countPositiveNumbers = GetCountPositiveNumbers(userSizeArray);
 Console.WriteLine($"В массиве {PrintArray(userSizeArray)} {countPositiveNumbers} чисел(ла) больше 0.");

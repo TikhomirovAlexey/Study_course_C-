@@ -32,7 +32,6 @@ string PrintMatrix(int[,] matrix)
         str += "]\n";
     }
     return str;
-
 }
 
 string PrintDictionary(int[] unique, int[] count)
